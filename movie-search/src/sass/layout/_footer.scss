@@ -1,11 +1,9 @@
-@use '../components/index.scss' as *;
 @use '../base/index.scss' as *;
+@use '../components/index.scss' as *;
 
-.page-header{
+.info-label{
     //border: $basic-border;
-    
     padding: 1rem;
-   //margin: 1rem;
     width: 100%;
     color: $whitish2;
     @include header-box;

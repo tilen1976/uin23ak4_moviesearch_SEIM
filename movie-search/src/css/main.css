@@ -1,5 +1,58 @@
+.container {
+  max-width: 800px;
+  background-color: #A9D9D0;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.page-header {
+  padding: 1rem;
+  width: 100%;
+  color: #FCEFDE;
+  background-color: #027373;
+}
+
+.navigation {
+  padding: 1rem;
+  background-color: #038C7F;
+  width: 100%;
+}
+.navigation .nav-links {
+  margin: 1rem;
+  background-color: #038C7F;
+  padding: 1rem;
+  border-radius: 20%;
+  color: #F2E7DC;
+}
+
+.search-bar {
+  background-color: #A9D9D0;
+  border: 2px dotted #027373;
+  border-radius: 2%;
+  padding: 1rem;
+  margin: 1rem;
+  width: 100%;
+}
+
+.main-content {
+  background-color: #A9D9D0;
+  border: 2px dotted #027373;
+  padding: 1rem;
+  margin: 1rem;
+  width: 100%;
+}
+
+.info-label {
+  padding: 1rem;
+  width: 100%;
+  color: #FCEFDE;
+  background-color: #027373;
+}
+
 body {
-  background-color: antiquewhite;
+  box-sizing: border-box;
 }
 
 /*# sourceMappingURL=main.css.map */

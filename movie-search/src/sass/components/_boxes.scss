@@ -1,0 +1,13 @@
+@use '../base/index.scss' as *;
+
+@mixin base-box(){
+  
+    background-color: $seagreen;
+    padding: 1rem;
+    border-radius: 20%;
+
+}
+
+@mixin header-box(){
+    background-color: $dark-seagreen;
+}

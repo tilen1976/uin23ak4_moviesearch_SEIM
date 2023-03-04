@@ -1,0 +1,18 @@
+@use '../base/index.scss' as *;
+@use '../components/index.scss' as *;
+
+.navigation {
+    padding: 1rem;
+    //margin: 1rem;
+    background-color: $seagreen;
+    width: 100%;
+
+    .nav-links{
+        margin: 1rem;
+        @include base-box;
+        color: $whitish;
+        
+    }
+    
+
+}

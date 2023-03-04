@@ -1,0 +1,13 @@
+@use '../base/index.scss' as *;
+@use '../components/index.scss' as *;
+
+
+.main-content{
+
+    background-color: $light-blue;
+    border: $basic-border;
+    padding: 1rem;
+    margin: 1rem;
+    width: 100%;
+
+}
