@@ -5,13 +5,18 @@
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
+  font-family: Helvetica;
 }
 
 .page-header {
-  padding: 1rem;
+  padding: 0.2rem 0 0.2rem 2rem;
   width: 100%;
   color: #FCEFDE;
   background-color: #027373;
+}
+.page-header h1 {
+  font-size: 4rem;
+  margin-left: 4rem;
 }
 
 .navigation {
@@ -34,6 +39,13 @@
   padding: 1rem;
   margin: 1rem;
   width: 100%;
+}
+.search-bar .search-btn {
+  background-color: #EB7540;
+  border: none;
+  padding: 0.3rem;
+  margin: 0.3rem;
+  border-radius: 10%;
 }
 
 .main-content {

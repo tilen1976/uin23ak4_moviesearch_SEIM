@@ -1,0 +1,9 @@
+@use '../base/index.scss' as *;
+
+@mixin searchButton() {
+    background-color: $orange;
+    border: none;
+    padding: 0.3rem;
+    margin: 0.3rem;
+    border-radius: 10%;
+}

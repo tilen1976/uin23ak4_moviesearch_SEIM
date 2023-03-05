@@ -4,10 +4,15 @@
 .page-header{
     //border: $basic-border;
     
-    padding: 1rem;
+    padding: 0.2rem 0 0.2rem 2rem;
    //margin: 1rem;
     width: 100%;
     color: $whitish2;
     @include header-box;
+
+    h1{
+        font-size: $header-size;
+        margin-left: 4rem;
+    }
 
 }
