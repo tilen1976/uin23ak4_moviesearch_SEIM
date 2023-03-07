@@ -11,7 +11,7 @@ export default function Search(){
                 <form className="find-film">
                     <input type="text" id="title" name="title" className="input-field" placeholder="Tittel..">
                     </input>
-                    {/**Lage forstørrelsesglass */}
+                    {/**Lage forstørrelsesglass, fjerne tekst*/}
                
                     <button type="submit" className="search-btn"><MagnifyingGlassIcon />Søk
                     </button>
