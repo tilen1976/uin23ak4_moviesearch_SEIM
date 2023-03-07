@@ -2,6 +2,7 @@ import './css/main.css';
 import {useState, useEffect} from 'react';
 import JamesBond from './components/JamesBond';
 import {MagnifyingGlassIcon} from '@heroicons/react/24/outline'
+import Header from './components/Header';
 
 
 function App() {
@@ -44,14 +45,12 @@ useEffect(() =>{
   getJamesBond()
 }, [])
 
-console.log(jamesBond)
+ console.log(jamesBond)
 
   return (
     <div className="container">
-      <header className="page-header">
-        <h1>Filmsøk</h1>
-       
-      </header>
+      <Header />
+   
       <nav className="navigation">
           <a href="#noe" className='nav-links'>Noe</a>
           <a href="#noe2" className='nav-links'>Noe2</a>
