@@ -1,8 +1,9 @@
 import './css/main.css';
 import {useState, useEffect} from 'react';
 import JamesBond from './components/JamesBond';
-import {MagnifyingGlassIcon} from '@heroicons/react/24/outline'
+
 import Header from './components/Header';
+import Search from './components/Search';
 
 
 function App() {
@@ -51,23 +52,12 @@ useEffect(() =>{
     <div className="container">
       <Header />
    
-      <nav className="navigation">
+        <nav className="navigation">
           <a href="#noe" className='nav-links'>Noe</a>
           <a href="#noe2" className='nav-links'>Noe2</a>
         </nav>
-      <aside className="search-bar">
-        <h3>Søk</h3>
-        <section className="search-section">
-            <form className="find-film">
-              <input type="text" id="title" name="title" className="input-field" placeholder="Tittel..">
-              </input>
-               {/**Lage forstørrelsesglass */}
-               
-              <button type="submit" className="search-btn"><MagnifyingGlassIcon />Søk
-              </button>
-            </form>
-        </section>
-      </aside>
+        <Search />
+      
       <main className='main-content'>
         <article className="page-content">
           <h2>Filmer:</h2>
