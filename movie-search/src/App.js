@@ -1,21 +1,17 @@
 import './css/main.css';
 import {useState, useEffect} from 'react';
-import MovieList from './components/MovieList';
-//import MagnifyingGlassIcon from '@heroicons/react/24/outline'
+import JamesBond from './components/JamesBond';
+import {MagnifyingGlassIcon} from '@heroicons/react/24/outline'
 
 
 function App() {
-  const [films, setFilms] = useState([]);
 
-  const jamesBond = [];
+  //const [movies, setMovies] = useState([]);
+  //sette søkeresultat James Bond her
+  const[jamesBond, setJamesBond] = useState([]);
 
-  const [movies, setMovies] = useState([        {
-    "Title": "Star Wars: Episode IV - A New Hope",
-    "Year": "1977",
-    "imdbID": "tt0076759",
-    "Type": "movie",
-    //"Poster": "https://m.media-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg"
-},
+  /*
+  const [movies, setMovies] = useState([     
 {
     "Title": "Star Wars: Episode V - The Empire Strikes Back",
     "Year": "1980",
@@ -31,36 +27,24 @@ function App() {
     "Poster": "https://m.media-amazon.com/images/M/MV5BOWZlMjFiYzgtMTUzNC00Y2IzLTk1NTMtZmNhMTczNTk0ODk1XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg"
 }]);
   
+*/
+const getJamesBond = async() => {
+  //søkeresultat de 10 første filmene, må legges i useState, men er ikke trofast mot begrepet film
+  const url = 'http://www.omdbapi.com/?s=james+bond&type=movie&page=10&apikey=6cd98276';
+  const response = await fetch(url);
 
-  useEffect(() => {
-    fetch(`http://www.omdbapi.com/?i=tt0055928&apikey=6cd98276`)
-    //fetch(`https://newsapi.org/v2/top-headlines?country=no&category=${category}&apiKey=75b121c29f544dfab69ee28c4c9c8021`)
-   //fetch(`https://newsapi.org/v2/everything?q=${search}&country=no&category=${category}&apiKey=75b121c29f544dfab69ee28c4c9c8021`)
-     .then(res => res.json())
-   //.then(data => console.log(data))
-     .then(data => jamesBond.push(data))
-     fetch(`http://www.omdbapi.com/?i=tt0057076&apikey=6cd98276`)
-      .then(res => res.json())
-     //.then(data => console.log(data))
-      .then(data => jamesBond.push(data))
-     //.then(data => jamesBond.push(data))
+  const data = await response.json();
 
- }, [])
 
- console.log()
+  setJamesBond(data.Search);
 
-/* useEffect(() => {
-  fetch(`http://www.omdbapi.com/?i=tt0057076&apikey=6cd98276`)
-  //fetch(`https://newsapi.org/v2/top-headlines?country=no&category=${category}&apiKey=75b121c29f544dfab69ee28c4c9c8021`)
- //fetch(`https://newsapi.org/v2/everything?q=${search}&country=no&category=${category}&apiKey=75b121c29f544dfab69ee28c4c9c8021`)
-   .then(res => res.json())
- //.then(data => console.log(data))
-   //.then(data => setFilms(data))
-   .then(data => jamesBond.push(data))
+}
 
-})*/
+useEffect(() =>{
+  getJamesBond()
+}, [])
 
-  //console.log(jamesBond)
+console.log(jamesBond)
 
   return (
     <div className="container">
@@ -79,8 +63,8 @@ function App() {
               <input type="text" id="title" name="title" className="input-field" placeholder="Tittel..">
               </input>
                {/**Lage forstørrelsesglass */}
-              <button type="submit" className="search-btn">
-                Finn film
+               
+              <button type="submit" className="search-btn"><MagnifyingGlassIcon />Søk
               </button>
             </form>
         </section>
@@ -89,9 +73,9 @@ function App() {
         <article className="page-content">
           <h2>Innhold</h2>
           <ul>
-          <MovieList movies={movies} />
-      
-          
+            <JamesBond jamesBond={jamesBond}
+              />
+       
           </ul>
 
         </article>

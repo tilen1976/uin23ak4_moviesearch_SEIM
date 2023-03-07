@@ -7,12 +7,17 @@
     padding: 0.2rem 0 0.2rem 2rem;
    //margin: 1rem;
     width: 100%;
-    color: $whitish2;
+    
     @include header-box;
+    background-image: url('camera-2801675_1920.jpg');
+    opacity: 0.5;
+   
 
     h1{
         font-size: $header-size;
         margin-left: 4rem;
+        color: $dark-seagreen;
     }
 
 }
+
