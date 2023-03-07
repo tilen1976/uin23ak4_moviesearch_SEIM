@@ -71,12 +71,12 @@ console.log(jamesBond)
       </aside>
       <main className='main-content'>
         <article className="page-content">
-          <h2>Innhold</h2>
-          <ul>
+          <h2>Filmer:</h2>
+          <ol>
             <JamesBond jamesBond={jamesBond}
               />
        
-          </ul>
+          </ol>
 
         </article>
         
