@@ -4,6 +4,7 @@ import JamesBond from './components/JamesBond';
 
 import Header from './components/Header';
 import Search from './components/Search';
+import FilmList from './components/FilmList';
 
 
 function App() {
@@ -59,16 +60,7 @@ useEffect(() =>{
         <Search />
       
       <main className='main-content'>
-        <article className="page-content">
-          <h2>Filmer:</h2>
-          <ol>
-            <JamesBond jamesBond={jamesBond}
-              />
-       
-          </ol>
-
-        </article>
-        
+        <FilmList jamesBond={jamesBond}/>   
       </main>
       <footer className='info-label'>
         Laget av noen
