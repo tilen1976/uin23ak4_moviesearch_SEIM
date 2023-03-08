@@ -42,12 +42,21 @@
   margin: 1rem;
   width: 100%;
 }
+.search-bar .search-section .find-film {
+  display: flex;
+}
+.search-bar .search-section .find-film .input-field {
+  height: 2rem;
+}
 .search-bar .search-btn {
   background-color: #EB7540;
   border: none;
   padding: 0.2rem;
   margin: 0.2rem;
   border-radius: 10%;
+}
+.search-bar .search-btn .search-icon {
+  min-width: 20px;
 }
 
 .main-content {

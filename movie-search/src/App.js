@@ -1,7 +1,7 @@
 import './css/main.css';
 import {useState, useEffect} from 'react';
 import JamesBond from './components/JamesBond';
-import {MagnifyingGlassIcon} from '@heroicons/react/24/outline'
+import { HiSearch} from "react-icons/hi";
 
 
 function App() {
@@ -9,6 +9,7 @@ function App() {
   //const [movies, setMovies] = useState([]);
   //sette søkeresultat James Bond her
   const[jamesBond, setJamesBond] = useState([]);
+  const [search, setSearch] = useState([{Title: "Bla bla"}, {Title: "bla bla 2"}]);
 
   /*
   const [movies, setMovies] = useState([     
@@ -44,7 +45,8 @@ useEffect(() =>{
   getJamesBond()
 }, [])
 
-console.log(jamesBond)
+
+console.log(search)
 
   return (
     <div className="container">
@@ -64,7 +66,8 @@ console.log(jamesBond)
               </input>
                {/**Lage forstørrelsesglass */}
                
-              <button type="submit" className="search-btn"><MagnifyingGlassIcon />Søk
+              <button type="submit" className="search-btn">
+                <HiSearch className='searc-icon' size={24} />
               </button>
             </form>
         </section>
@@ -77,6 +80,7 @@ console.log(jamesBond)
               />
        
           </ol>
+         
 
         </article>
         

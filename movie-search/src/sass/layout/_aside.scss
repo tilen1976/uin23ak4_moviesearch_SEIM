@@ -9,8 +9,25 @@
     margin: 1rem;
     width: 100%;
 
+    .search-section{
+
+        .find-film{
+            display: flex;
+
+            .input-field{
+                height: 2rem;
+        
+            }
+
+        }
+    }
+
+ 
+
     .search-btn{
         @include searchButton;
+      
+
     }
 
 }
