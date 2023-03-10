@@ -64,7 +64,26 @@
   border: 2px dotted #027373;
   padding: 1rem;
   margin: 1rem;
+  overflow: hidden;
   width: 100%;
+}
+.main-content .movie-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+.main-content .movie-content .movie-title {
+  display: block;
+  width: 100%;
+}
+.main-content .movie-content .movie-poster {
+  max-width: 200px;
+  width: 100%;
+}
+.main-content .movie-content .movie-info {
+  margin: 0 1rem;
+  padding: 1rem;
+  border: 2px dotted #038C7F;
+  min-width: 300px;
 }
 
 .info-label {
