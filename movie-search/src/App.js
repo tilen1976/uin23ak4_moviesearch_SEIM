@@ -15,6 +15,7 @@ function App() {
   //sette søkeresultat James Bond her
   const[jamesBond, setJamesBond] = useState([]);
   const [search, setSearch] = useState([{Title: "Bla bla"}, {Title: "bla bla 2"}]);
+ 
 
   /*
   const [movies, setMovies] = useState([     
