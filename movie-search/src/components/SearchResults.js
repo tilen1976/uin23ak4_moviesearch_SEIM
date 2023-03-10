@@ -1,13 +1,15 @@
 import MovieCard from "./MovieCard";
 
-export default function SearchResult(){
+export default function SearchResult({jamesBond}){
     return (
         <main className="main-content">
             <h2>Søkeresultat:</h2>
             <ol>
-                <li>
-                <MovieCard />
-                </li>
+              {jamesBond.map((movie, index) => (
+				<li key={index}>
+					<MovieCard title={movie.Title} year={movie.Year} imdbID={movie.imdbID}/>
+				</li>
+			))}
 
             </ol>
         </main>

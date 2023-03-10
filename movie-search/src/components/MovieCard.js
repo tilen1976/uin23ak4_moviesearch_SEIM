@@ -17,16 +17,20 @@ imdbID
 "tt12003104"
 */
 
-export default function MovieCard(){
+export default function MovieCard({title, year, imdbID}){
+    const linkAdress = `https://www.imdb.com/title/${imdbID}`
+    const placeholderPoster = "../images/placeholderTemp.webp";
 
     return (
         <article className="movie-content">
-            <h3 className="movie-title">Tittel</h3>
-            <img className="movie-poster" src="../images/placeholderTemp.webp" alt="tekst"/>
+            <h3 className="movie-title">{title}</h3>
+            {/*Ternary om det er en poster her */}
+            <img className="movie-poster" src={placeholderPoster} alt="tekst"/>
             <section className="movie-info">
-                <p>Årstall</p>
+                <p>Årstall: {year}</p>
                 <p>Bla bla bla</p>
-                <a href="https://www.imdb.com/title/tt12003104">Les mer på ...</a>
+                {/*legge på en if her, ev sile på at filmen har en imbd id */}
+                <a href={linkAdress}>Les mer på ...</a>
                 
             </section>
             
