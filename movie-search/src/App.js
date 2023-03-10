@@ -2,16 +2,19 @@ import './css/main.css';
 import {useState, useEffect} from 'react';
 import JamesBond from './components/JamesBond';
 
+
 import Header from './components/Header';
 import Search from './components/Search';
 import FilmList from './components/FilmList';
 
+import { HiSearch} from "react-icons/hi";
 
 function App() {
 
   //const [movies, setMovies] = useState([]);
   //sette søkeresultat James Bond her
   const[jamesBond, setJamesBond] = useState([]);
+  const [search, setSearch] = useState([{Title: "Bla bla"}, {Title: "bla bla 2"}]);
 
   /*
   const [movies, setMovies] = useState([     
