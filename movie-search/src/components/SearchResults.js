@@ -7,7 +7,7 @@ export default function SearchResult({jamesBond}){
             <ol>
               {jamesBond.map((movie, index) => (
 				<li key={index}>
-					<MovieCard title={movie.Title} year={movie.Year} imdbID={movie.imdbID}/>
+					<MovieCard title={movie.Title} year={movie.Year} imdbID={movie.imdbID}poster={movie.Poster}/>
 				</li>
 			))}
 
