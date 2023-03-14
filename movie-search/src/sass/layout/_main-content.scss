@@ -10,28 +10,37 @@
     margin: 1rem;
     overflow: hidden;
     width: 100%;
-  
 
-    .movie-content{
-        display: flex;
-        flex-wrap: wrap;
+    .list-content{
+        
+        padding: 1rem;
 
-
-        .movie-title{
-            display: block;
-            width: 100%;
-        }
-
-        .movie-poster{
-            max-width: 200px;
-            width: 100%;
-        }
-
-        .movie-info{
-            margin: 0 1rem;
-            padding: 1rem;
+        .movie-content{
+       
             border: 2px dotted $seagreen;
-            min-width: 300px;
+            margin: 1rem;
+            padding: 1rem;
+
+            .movie-title{
+                display: block;
+                width: 100%;
+             }
+            .movie{
+                display: flex;
+
+                .movie-poster{
+                    max-width: 200px;
+                    width: 100%;
+                }
+
+                .movie-info{
+                    margin: 0 1rem;
+                    padding: 1rem;
+                    max-width: 500px;
+            
+                    //min-width: 300px;
+                }
+            }
         }
     }
 

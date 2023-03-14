@@ -1,6 +1,5 @@
 import './css/main.css';
 import {useState, useEffect} from 'react';
-//import JamesBond from './components/JamesBond';
 import Header from './components/Header';
 import Search from './components/Search';
 import SearchResult from './components/SearchResults';
@@ -8,29 +7,28 @@ import SearchResult from './components/SearchResults';
 
 function App() {
 
-  //const [movies, setMovies] = useState([]);
-  //sette søkeresultat James Bond her
-  const[jamesBond, setJamesBond] = useState([]);
-  //const [search, setSearch] = useState([{Title: "Bla bla"}, {Title: "bla bla 2"}]);
+  const [james, setJamesBond] = useState([])
+  const [movies, setMovies] = useState([]);
+  //const jamesBond = [fetch('http://www.omdbapi.com/?s=james+bond*&type=movie&apikey=6cd98276')]
+  const [search, setSearch] = useState([]);
  
-const getJamesBond = async() => {
-  //søkeresultat de 10 første filmene, må legges i useState, men er ikke trofast mot begrepet film
-  //kan man filtrere ut de uten imbd id
-  const url = 'http://www.omdbapi.com/?s=james+bond&type=movie&page=10&apikey=6cd98276';
+  
+  useEffect(() =>{
+    fetch(`http://www.omdbapi.com/?s=james+bond*&type=movie&apikey=6cd98276`)
+    .then(res => res.json())
+    .then(data => setMovies(data.Search))
+}, [])
+
+
+const getMovies = async() => {
+  const url = `http://www.omdbapi.com/?s=${search}&type=movie&apikey=6cd98276`;
   const response = await fetch(url);
 
   const data = await response.json();
+  console.log(data.Search);
 
-
-  setJamesBond(data.Search);
-
+  setMovies(data.Search);
 }
-
-useEffect(() =>{
-  getJamesBond()
-}, [])
-
- console.log(jamesBond)
 
   return (
     <div className="container">
@@ -40,9 +38,9 @@ useEffect(() =>{
           <a href="#noe" className='nav-links'>Info om</a>
           <a href="#noe2" className='nav-links'>Tanker</a>
         </nav>
-        <Search />
+        <Search setSearch={setSearch} getMovies={getMovies}/>
       
-        <SearchResult jamesBond={jamesBond}/>   
+        <SearchResult movies={movies}/>   
     
       <footer className='info-label'>
         Laget av noen

@@ -14,21 +14,25 @@
         .find-film{
             display: flex;
 
-            .input-field{
-                height: 2rem;
+            
+
+               #title {
+                  min-height: 2rem;
+                  width: 100%;
+        
+               }
+
+               .search-btn{
+                @include searchButton;
+              
         
             }
 
+
+            }
+
         }
-    }
 
     
- 
-
-    .search-btn{
-        @include searchButton;
-      
-
-    }
 
 }

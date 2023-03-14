@@ -1,53 +1,66 @@
-
 /*
-Poster
-: 
-"https://m.media-amazon.com/images/M/MV5BMzg4MjM3MDgtMzljMi00OTJiLThiOGUtMTVhOTcwYTFjMWU1XkEyXkFqcGdeQXVyMTY1MTcxMzc@._V1_SX300.jpg"
-Title
-: 
-"Pan Bahar Pierce Brosnan James Bond Style Television Commercial"
-Type
-: 
-"movie"
-Year
-: 
-"2016"
-imdbID
-: 
-"tt12003104"
-
-Søkeresultater skal vise poster 
-(hvis det finnes i resultatene. 
-Hvis ikke, bruk et placeholder-bildeLinks to an external site.) 
-som et bilde på nettsiden, tittel, år publisert, sjanger, regissør, skuespillere og eventuelle priser 
+ og eventuelle priser 
 */
 
+import { useState, useEffect } from "react";
+import Movie from "./Movie";
+import {Routes, Route, Link, useParams } from 'react-router-dom'
+
 export default function MovieCard({title, year, imdbID, poster}){
-    const linkAdress = `https://www.imdb.com/title/${imdbID}`
+    
+   // const linkAdress = `https://www.imdb.com/title/${imdbID}`
+   
+    const linkAdress2 = `http://www.omdbapi.com/?i=${imdbID}&apikey=6cd98276`
+   
     const placeholderPoster = "../images/placeholderTemp.webp";
     const onImageError = (e) => {e.target.src = placeholderPoster}
 
+    const [movieDetail, setMovieDetail] = useState([]);
+
+    const getMovieDetail = async() => {
+        const url = linkAdress2;
+        const response = await fetch(url);
+
+        const data = await response.json();
+
+
+        setMovieDetail(data);
+
+    }
+
+    useEffect(() =>{
+       getMovieDetail()
+    })
 
     return (
+        <>
         <article className="movie-content">
             <h3 className="movie-title">{title}</h3>
-            {/*Ternary om det er en poster her */}
-          
-
-            <img className="movie-poster" src={poster ? poster : placeholderPoster} alt="tekst" onError={onImageError}/> 
-
-      
-        
-            <section className="movie-info">
-                <p>Årstall: {year}</p>
-                <p>Bla bla bla</p>
-                <p></p>
-                {/*legge på en if her, ev sile på at filmen har en imbd id */}
-                <a href={linkAdress}>Les mer på ...</a>
-                
-            </section>
+            <section className="movie">
+                <img className="movie-poster" src={poster ? poster : placeholderPoster} alt="tekst" onError={onImageError}/> 
             
+        
+                <section className="movie-info">
+                   <p>År publisert: {year}</p>
+                   <p>Sjanger: {movieDetail.Genre ? movieDetail.Genre : ''}</p>
+                   <p>Regissør: {movieDetail.Director? movieDetail.Director : ''}</p>
+                   <p>Skuespillere: {movieDetail.Actors ? movieDetail.Actors : ''}</p>
+                   
+
+                   <p>{movieDetail.Plot !== 'N/A' ? movieDetail.Plot : ''}</p>
+    
+                    <Link to={imdbID}>Les mer...</Link>
+
+                   <a href={linkAdress2}>Les mer...</a>
+                
+               </section>
+            </section>
 
         </article>
+
+   
+   
+      
+      </>
     )
 }
