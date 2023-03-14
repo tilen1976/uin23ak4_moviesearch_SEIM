@@ -1,6 +1,9 @@
 import MovieCard from "./MovieCard";
 
 export default function SearchResult({jamesBond}){
+
+    //useState med jamesBond som default
+    //lage metoder i Search
     return (
         <main className="main-content">
             <h2>Søkeresultat:</h2>
