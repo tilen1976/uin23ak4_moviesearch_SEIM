@@ -15,9 +15,14 @@ Year
 imdbID
 : 
 "tt12003104"
+
+Sjekk routing
 */
 
+
+
 export default function MovieCard({title, year, imdbID}){
+    //Endre denne - skal være et apikall som setter inn "imdbID": "tt0098669"
     const linkAdress = `https://www.imdb.com/title/${imdbID}`
     const placeholderPoster = "../images/placeholderTemp.webp";
 
@@ -29,8 +34,10 @@ export default function MovieCard({title, year, imdbID}){
             <section className="movie-info">
                 <p>Årstall: {year}</p>
                 <p>Bla bla bla</p>
-                {/*legge på en if her, ev sile på at filmen har en imbd id */}
+                {/*legge på en if her, ev sile på at filmen har en imbd id 
+                <MoviePage med id*/}
                 <a href={linkAdress}>Les mer på ...</a>
+                {/**"imdbID": "tt0098669", */}
                 
             </section>
             
